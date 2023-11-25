@@ -70,7 +70,8 @@ def cifradoPredeterminado(M):
     bloques = [numeros_mensaje[i:i+2] for i in range(0, len(numeros_mensaje), 2)]
 
     # Cifrar cada bloque
-    mensaje_cifrado = [ExpMod(num[0] * 100 + num[1], e, n) for num in bloques]
+    mensaje_cifrado = [ExpMod(num[0] * 100 + num[1], e, n) for num in bloques if len(num) >= 2]
+
 
     print("Mensaje cifrado:", mensaje_cifrado)
 
@@ -112,11 +113,11 @@ def descifrar(C, d, n):
     print("Mensaje descifrado:", mensaje_descifrado)
 
 def ExpMod(base, exp, mod):
-    return pow(base, exp, mod)
+    return pow(int(base), int(exp), int(mod))
 
 inverso_diccionario = {v: k for k, v in dic3.items()}
 
-
+menuP()
 
 
 

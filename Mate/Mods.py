@@ -5,7 +5,7 @@ getcontext().prec = 500
 
 def ExpMod(base,exp,mod):
 
-    numerador = base**exp
+    numerador = int(base)**int(exp)
     mod
 
     resultado = numerador % mod
